@@ -2,6 +2,12 @@ import { useState } from 'react'
 
 export default function App() {
 
+
+  fetch('https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts')
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.error('Error fetching data:', error));
+
   const [formData, setFormData] = useState({
     author: "",
     title: "",
@@ -23,7 +29,7 @@ export default function App() {
 
       <div className="container mt-4">
 
-        <form class="row g-3">
+        <form className="row g-3">
 
           <div>
             <label htmlFor="">Author</label>
